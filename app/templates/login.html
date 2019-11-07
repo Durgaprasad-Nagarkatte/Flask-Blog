@@ -15,8 +15,9 @@
         {% for error in form.password.errors %}
             <span style="color:red">{{ error }}</span>
         {% endfor %}
-        
+
         <p>{{ form.remember_me() }} {{form.remember_me.label}}</p> 
         <p>{{ form.submit() }}</p>
+
     </form>
 {% endblock %}
