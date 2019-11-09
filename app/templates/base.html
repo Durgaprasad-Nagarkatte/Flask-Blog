@@ -10,7 +10,12 @@
         <div>
             Microblog: 
             <a href="{{url_for('index')}}"> Home </a></div>
-            <a href="{{url_for('login')}}">Sign In</a>
+            {% if current_user.is_anonymous %}
+                <a href="{{url_for('login')}}">Sign In</a>
+            {% else %}
+                <a href="{{url_for('logout')}}">Logout</a>
+            {% endif %}
+
         </div>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
